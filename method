@@ -1,0 +1,47 @@
+/*
+メソッドを定義する方法
+
+修飾子 戻り値の型 メソッド名(引数){
+    メソッドの処理
+}
+*/
+
+public int sample(int num) {
+    num++;
+    return num;
+}
+
+/*
+メソッドの呼び出し方
+メソッド名(引数)
+
+戻り値を格納するオブジェクト変数名 = メソッド名(引数)
+
+メソッドに引数を使って値を渡す方法
+*/
+
+public class Main {
+ 
+    public static void main(String[] args) {
+        add(1, 2);
+        add(4, 6);
+    }
+ 
+    public static void add(int num1, int num2) {
+        System.out.println(num1 + num2);
+    }
+}
+
+// メソッドの戻り値(return)の使い方
+
+public class Main {
+ 
+    public static void main(String[] args) {
+        int result = add(1, 2);
+        System.out.println(result);
+    }
+ 
+    public static int add(int num1, int num2) {
+        return num1 + num2;
+    }
+}
