@@ -1,0 +1,46 @@
+package com.store;
+
+public class Goods {
+
+    // 멤버 변수 (fields)
+    public String code;     // 상품 코드
+    public String name;     // 상품명
+    public int size;        // 사이즈
+    public int quantity;    // 수량
+    public int price;       // 가격
+
+
+    // 상품 정보를 출력하는 메서드
+    public void printInformation() {
+        System.out.println("===========================================");
+        System.out.println("상품 코드는 " + code + "입니다.");
+        System.out.println("상품명은 " + name + "입니다.");
+        System.out.println("사이즈는 " + size + "입니다.");
+        System.out.println("수량은 " + quantity + "개입니다.");
+        System.out.println("가격은 " + price + "원입니다.");
+        System.out.println("===========================================");
+    }
+
+    // 결제 수단을 전달받아 상품을 판매 처리하는 메서드
+    public void sell(String payMethod) {
+        // 카드 결제인 경우, 사용자에게 메시지를 전달한 후 로직 종료
+        if ("CARD".equals(payMethod)) {
+            System.out.println("===========================================");
+            System.out.println("지금은 카드 결제가 불가능합니다.");
+            System.out.println(name + "의 남은 수량은 " + quantity + "개입니다.");
+            System.out.println("===========================================");
+            return;
+        }
+
+        // 상품 수량 차감
+        quantity--;
+
+        // 낭믄 상품 수량 출력
+        System.out.println("===========================================");
+        System.out.println(name + "의 남은 수량은 " + quantity + "개입니다.");
+        System.out.println("===========================================");
+
+        // ... (남은 수량 저장 로직 실행)
+    }
+
+}
