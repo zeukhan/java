@@ -1,0 +1,27 @@
+package com.test;
+
+import com.store.Goods;
+
+public class GoodsTest {
+
+    // main 메서드
+    public static void main(String[] args) {
+        // 상품 객체 생성
+        Goods shoes1 = new Goods();
+        shoes1.code = "SHOES-A001";
+        shoes1.name = "1번 신발";
+        shoes1.size = 250;
+        shoes1.quantity = 10;
+        shoes1.price = 99000;
+
+        // 상품 정보 출력
+        shoes1.printInformation();
+
+        // 상품 판매 (카드 - 결제 실패)
+        shoes1.sell("CARD");
+
+        // 상품 판매 (현금 - 결제 성공)
+        shoes1.sell("CASH");
+    }
+
+}
