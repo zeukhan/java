@@ -1,0 +1,44 @@
+package com.company;
+
+import java.time.LocalDate;
+
+public class Member {
+
+    String loginId;          // 로그인 ID
+    String password;         // 비밀번호
+    String name;             // 이름
+    LocalDate birthday;      // 생년월일
+    int postcode;            // 우편번호
+    String address;          // 주소
+    String detailAddress;    // 상세 주소
+    String payMethod;        // 결제 수단
+
+    // 기본 생성자 (다른 생성자가 없는 경우, 선언하지 않아도 됨)
+    public Member() {
+
+    }
+
+    /*
+     * 회원(Member) 객체 생성 시점에 이름을 초기화
+     * ex:) Member member = new Member("도뎡");
+     */
+    public Member(String name) {
+        // this.name은 멤버 변수 name을 의미 (필드명과 매개변수의 이름이 같은 경우 this로 구분 가능)
+        this.name = name;
+    }
+
+    /*
+     * 회원(Member) 객체 생성 시점에 ID와 비밀번호를 초기화
+     * ex:) Member member = new Member("abc123", "qweasd123!@#");
+     */
+    public Member(String loginId, String password) {
+        this.loginId = loginId;
+        this.password = password;
+    }
+
+    // 회원의 이름을 반환
+    public String getName() {
+        return name; // 또는 return this.name;
+    }
+
+}
