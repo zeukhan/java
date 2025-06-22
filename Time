@@ -1,0 +1,17 @@
+package com.company;
+
+// java.time 패키지의 모든 클래스 참조 (하위 패키지(디렉터리) 제외)
+import java.time.*;
+
+// 앞에서 java.time.*을 선언했지만, java.time.format은 java.time의 하위 패키지이므로 별도로 선언해 주어야 함
+import java.time.format.DateTimeFormatter;
+
+public class Time {
+
+    public static void main(String[] args) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String message = "현재 시간은 " + LocalDateTime.now().format(formatter).toString() + "입니다.";
+        System.out.println(message);
+    }
+
+}
