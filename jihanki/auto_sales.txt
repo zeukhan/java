@@ -1,0 +1,68 @@
+自動販売機　仕様書
+
+
+事前準備
+
+No、商品名、価格、在庫数
+１，リンゴ、1000、2
+２，バナナ、1500、5
+３，梨、2000、10
+４，もも、5000、0
+
+１，商品一覧
+	①商品一覧を表示する。
+		・在庫がないとボタンが押下できないようにする。
+		・在庫があるとボタンが押下できる。
+	
+２，お金を投入
+	①画面に表示されたお金を投入する。
+	②商品を選択する。（コマンドラインからの入力）
+		・投入したお金　＜　商品価格の場合は
+			⇒お金が足りないメッセージを表示する。
+			⇒2-①にもどる
+		・投入したお金　＞＝　商品価格の場合は
+			⇒商品とお釣りを返す。
+３，在庫管理
+	①購入された商品の数量を１個減らす。
+
+
+Javaでコマンドラインから入力
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("名前を入力してください: ");
+        String name = scanner.nextLine();
+        System.out.println("こんにちは、" + name + "さん！");
+        scanner.close();
+    }
+}
+
+
+
+コマンドライン引数で選択肢を処理するプログラム
+public class CommandLineSelection {
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("選択肢を指定してください: 1, 2, または 3");
+            return;
+        }
+
+        String choice = args[0]; // 最初の引数を取得
+
+        switch (choice) {
+            case "1":
+                System.out.println("選択肢1: こんにちは！");
+                break;
+            case "2":
+                System.out.println("選択肢2: お元気ですか？");
+                break;
+            case "3":
+                System.out.println("選択肢3: さようなら！");
+                break;
+            default:
+                System.out.println("無効な選択肢です。1, 2, または 3を指定してください。");
+        }
+    }
+}
